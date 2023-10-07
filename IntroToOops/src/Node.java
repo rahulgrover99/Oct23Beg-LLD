@@ -1,7 +1,6 @@
 public class Node {
     int data;
     Node next;
-    double random;
 
     // Default constructor automatically
     // added by java.
@@ -15,9 +14,15 @@ public class Node {
         this.data = data;
     }
 
-    Node(double random, int data) {
-        this.random = random;
-        this.data = data;
+    // Shallow copy since simply copying the reference.
+    Node(Node otherNode) {
+        this.data = otherNode.data;
+//        this.next = otherNode.next;
+        if (otherNode.next != null){
+            this.next = new Node(otherNode.next);
+        }
+
     }
+
 
 }

@@ -1,3 +1,5 @@
+import inheritance.Instructor;
+
 public class Main {
     public static void main(String[] args) {
         // Creating an object in heap memory
