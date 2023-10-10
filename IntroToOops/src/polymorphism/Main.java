@@ -7,7 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Bird bird  = new Penguin();
+        Bird penguin  = new Penguin();
+        penguin.fly();
         List<Bird> birds = List.of(new Sparrow(), new Bird(), new Penguin());
 
         for (Bird bird: birds) {
