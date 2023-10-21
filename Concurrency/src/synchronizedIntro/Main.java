@@ -1,4 +1,4 @@
-package addersubtractor;
+package synchronizedIntro;
 
 
 import java.util.concurrent.locks.Lock;
@@ -7,9 +7,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         SharedVariable sharedVariable = new SharedVariable();
-        Lock lock = new ReentrantLock();
-        Adder adder = new Adder(sharedVariable, lock);
-        Subtractor subtractor = new Subtractor(sharedVariable, lock);
+        Adder adder = new Adder(sharedVariable);
+        Subtractor subtractor = new Subtractor(sharedVariable);
 
         Thread t1 = new Thread(adder);
         Thread t2 = new Thread(subtractor);
